@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ryu's Home</title>
-</head>
-<body>
-	测试
-</body>
-</html>>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.7.1/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+	<div id="q-app" style="min-height: 100vh;">
+	  <div class="q-pa-md">
+	    <q-layout view="lHh lpr lFf" container style="height: 400px" class="shadow-2 rounded-borders">
+	      <q-header reveal elevated>
+	        <q-toolbar>
+	          <q-btn flat round dense icon="menu" class="q-mr-sm"></q-btn>
+	          <q-avatar>
+	            <img src="https://cdn.quasar.dev/logo-v2/svg/logo-mono-white.svg">
+	          </q-avatar>
+
+	          <q-toolbar-title>正在建立中...</q-toolbar-title>
+
+	          <q-btn flat round dense icon="whatshot"></q-btn>
+	        </q-toolbar>
+
+	        <q-tabs v-model="tab">
+	          <q-tab name="images" label="Reading"></q-tab>
+	          <q-tab name="videos" label="Articles"></q-tab>
+	          <q-tab name="articles" label="other"></q-tab>
+	        </q-tabs>
+	      </q-header>
+
+	      <q-page-container>
+	        <q-page class="q-pa-md">
+	          <p v-for="n in 1" :key="n">
+	            正在搬运中...
+	          </p>
+	        </q-page>
+	      </q-page-container>
+	    </q-layout>
+	  </div>
+	</div>
+
+    <!-- Add the following at the end of your body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.7.1/dist/quasar.umd.prod.js"></script>
+    
+    <script>
+      /*
+        Example kicking off the UI. Obviously, adapt this to your specific needs.
+        Assumes you have a <div id="q-app"></div> in your <body> above
+       */
+      const app = Vue.createApp({
+        setup () {
+          return {}
+        }
+      })
+
+      app.use(Quasar)
+      app.mount('#q-app')
+    </script>
+  </body>
+</html>
